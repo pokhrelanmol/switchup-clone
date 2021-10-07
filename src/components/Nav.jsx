@@ -3,11 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   const [show, setShow] = useState(true);
   return (
-    <div className="h-20 min-w-full shadow-md flex justify-around items-center  ">
+    <div className="h-20 mix-blend-darken shadow-md flex justify-around items-center  ">
       <div className="cursor-pointer">
         <Link to="/">
           <img
-            className=" h-10 sm:h-14 w-23 cursor-pointer"
+            className=" h-10 sm:h-14 cursor-pointer object-contain"
             src="https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/SU-logo-polished-d/original.png?1628697059"
             alt="Logo"
           />
@@ -15,8 +15,8 @@ const Nav = () => {
       </div>
       {/* navlinks */}
       {show ? (
-        <ul className="flex pt-40 sm:p-0 ">
-          <li className="  group relative dropdown px-4  cursor-pointer text-base tracking-wide ">
+        <ul className="flex flex-col md:flex-row pt-48   md:p-0 ">
+          <li className=" group relative cursor-pointer pl-24  text-base tracking-wide ">
             <Link to="/" className="flex">
               Bootcamps Ranking
               <svg
@@ -30,8 +30,8 @@ const Nav = () => {
                 <path d="M0 0h24v24H0z" fill="none" />
               </svg>
             </Link>
-            <div className="group-hover:block dropdown-menu absolute hidden  ">
-              <ul className="top-0 w-72 shadow px-6 py-6">
+            <div className="group-hover:block  absolute hidden z-10 ">
+              <ul className=" w-72 shadow-md px-6 py-6 bg-gray-100">
                 <li className="py-1">
                   <NavLink to="/" className="  links ">
                     Best Online Bootcamps
@@ -106,7 +106,7 @@ const Nav = () => {
       )}
       <i
         onClick={() => setShow(!show)}
-        className="fas fa-bars visible pr-10 text-lg sm:invisible"
+        className="fas fa-bars visible pr-10 text-lg md:invisible"
       ></i>
     </div>
   );
